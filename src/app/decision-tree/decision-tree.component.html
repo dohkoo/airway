@@ -1,0 +1,29 @@
+<div class="treecontent">
+  <p><span>
+  <div *ngIf="decisions">
+      <ion-icon name="chevron-down-outline"></ion-icon>
+  <ion-segment [(ngModel)]="getlist">
+    <ion-segment-button *ngFor="let node of decisions"
+    value={{node.savename}} >{{ node.title }}</ion-segment-button>
+  </ion-segment>
+
+
+
+  <div [ngSwitch]="getlist">
+    <div *ngFor="let list of decisions">
+      <div *ngSwitchCase="list.savename">
+        <div *ngIf="list.info">
+          <div class="listinfo" [innerHTML]="list.info"></div>
+        </div>
+        <div *ngIf="list.nodes.length>0">
+        <decision-tree [decisions]="list.nodes" id="{{list.savename}}" [switchy]="list.savename"></decision-tree>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+</span>
+</p>
+</div>

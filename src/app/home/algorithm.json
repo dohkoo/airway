@@ -1,0 +1,93 @@
+
+[ { "title": "Awake",
+	"nodes" :
+	[ {"title": "Non-invasive",
+		"nodes" :
+		[ {"title": "Succeed",
+			"info": "Congrats. Airway secured"
+		},
+		{"title": "Fail",
+			"nodes": [
+				{"title": "Cancel Case",
+					"info": "Cancel the case if failure to secure airway" },
+					{"title": "Invasive Airway Access",
+						"info": "Invasive airway access includes surgical or percutaneous airway, jet ventilation, and retrograde intubation."
+					},
+					{"title": "Consider Options",
+						"info": "Consider Feasibility Of Other Options"
+					}
+				]
+			}
+		]
+	},
+	{"title": "Invasive Airway",
+		"info": "Invasive airway access includes surgical or percutaneous airway, jet ventilation, and retrograde intubation."
+	}
+]
+},
+{ "title": "Asleep",
+	"info": "Attempt to Intubate.",
+	"nodes" :
+	[
+		{"title": "Intubation Success",
+			"info": "Congrats. Airway Secured"
+		},
+		{	"title": "Intubation Failure",
+			"info": "Consider: call for help, spont ventilation or waking the patient up<br>Can you ventilate?",
+			"nodes" : [
+				{ "title":	"Mask ventilation adequate",
+					"info": "Non-emergency pathway.<br>Try alternative means to intubate such as: <li>Video Assited Laryngoscopy</li><li>Other Laryngoscope blades</li><li>Supraglottic Airway (LMA or intubating LMA)</li><li>Fiberoptic intubation</li><li>Intubating stylet or tube changer</li><li>Light Wand</li><li>Blind oral or nasal intubation</li>",
+					"nodes":
+					[
+						{"title": "Success",
+							"info": "Successful Intubation confirmed with exhaled CO2"
+						},
+						{"title": "Fail After Multiple Attempts",
+							"nodes": [
+								{"title": "Awaken Patient",
+									"info": "Consider awakening the patient" },
+								{"title": "Invasive Airway Access",
+									"info": "Invasive airway access includes surgical or percutaneous airway, jet ventilation, and retrograde intubation."
+								},
+								{"title": "Consider Options",
+									"info": "Consider Feasibility Of Other Options"
+								}
+								]
+							}
+					]
+				},
+				{"title": "Mask ventilation inadequate",
+					"info": "Consider/Attempt Supgralottic Airway",
+					"nodes": [
+						{"title": "SGA Adequate",
+							"info": "Non-emergency pathway.<br>Try alternative means to intubate such as: <li>Video Assited Laryngoscopy</li><li>Other Laryngoscope blades</li><li>Supraglottic Airway (LMA or intubating LMA)</li><li>Fiberoptic intubation</li><li>Intubating stylet or tube changer</li><li>Light Wand</li><li>Blind oral or nasal intubation</li>" },
+						{"title": "SGA Not Adequate",
+							"info": "SGA not adequate or not feasible.<br/><br/>EMERGENCY PATHWAY. CANNOT INTUBATE, CANNOT VENTILATE.<br>SGA NOT ADEQUATE<br>1. Call for Help<br>2. Are you still unable to ventilate?",
+							"nodes": [
+								{"title": "Successful Ventilation",
+									"info": "Consider Feasibility Of Other Options",
+									"nodes": [
+										{"title": "Awaken Patient",
+											"info": "Consider awakening the patient" },
+										{"title": "Invasive Airway Access",
+											"info": "Invasive airway access includes surgical or percutaneous airway, jet ventilation, and retrograde intubation."
+										},
+										{"title": "Consider Options",
+											"info": "Consider Feasibility Of Other Options"
+										}
+									]
+								},
+								{"title": "FAILED Ventilation",
+									"info": "EMERGENCY INVASIVE AIRWAY ACCESS: surgical or percutaneous airway, jet ventilation, and retrograde intubation."
+								}
+
+							]
+						}
+
+					]
+				}
+			]
+		}
+	]
+}
+]

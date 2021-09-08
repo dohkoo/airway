@@ -1,0 +1,42 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title start>
+      Difficult Airway Algorithm
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="presentModal()">
+        <ion-icon name="information-circle-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-toolbar id="choose">
+    Choose an option...
+  </ion-toolbar>
+
+  <div id="originaltree">
+    <decision-tree [decisions]="decisions" [switchy]="choose"></decision-tree>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <a href="https://www.ncbi.nlm.nih.gov/pubmed/23364566" target="_blank">Reference: Practice Guidelines From ASA >></a>
+</ion-footer>
+
+<div id="loading">
+  <div class="text">
+    THE INTERACTIVE MANUAL OF ANESTHESIOLOGY
+    <div class="title">
+      ANESTHESIOLOGIST<br />TOOLKIT
+    </div>
+    <div class="apptitle">
+      .01 | DIFFICULT AIRWAY ALGORITHM
+    </div>
+    <p></p>
+    <img src="./assets/blade.png" />
+
+    <div class="byme">BY STESHA DOKU, MD >></div>
+  </div>
+</div>
